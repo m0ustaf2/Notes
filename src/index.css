@@ -5,8 +5,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #24353f;
+  font-family: 'Titillium Web', sans-serif;
 }
 
+.note {
+  background: linear-gradient(#F9EFAF, #F7E98D);
+}
+
+
+.del:hover {
+  color: #F44336;
+  transform: rotate(50deg);
+  cursor: pointer;
+}
+
+.edit:hover {
+  color: #07f542;
+  transform: rotate(-50deg);
+  cursor: pointer;
+}
+
+.note i {
+  transition: all 0.3s;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
