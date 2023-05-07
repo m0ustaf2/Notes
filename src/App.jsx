@@ -8,6 +8,7 @@ import Home from './Componetes/Home/Home';
 import { ToastContainer } from 'react-toastify';
 import InverseProtectedRoot from './Componetes/InverseProtectedRoute/InverseProutectedRoute';
 import ProtectedRoot from './Componetes/ProtectedRoute/ProtectedRoute';
+import Notfound from './Componetes/Notfound/Notfound';
 
 function App() {
 
@@ -17,6 +18,10 @@ function App() {
       {path:"/login",element: <InverseProtectedRoot><Login/></InverseProtectedRoot>},
       {index:true,element: <InverseProtectedRoot><Register/> </InverseProtectedRoot>},
       {path:"/home",element: <ProtectedRoot><Home/></ProtectedRoot>},
+    {path:'Notes',element:<ProtectedRoot> <Home/> </ProtectedRoot>},
+    {path:'*' , element:<Notfound/>}
+
+
     ]
   }]) 
   return (
