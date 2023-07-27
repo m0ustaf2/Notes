@@ -45,7 +45,7 @@ export default function Home() {
       if (result.isConfirmed) {
 
        ( async()=>{
-          let {data} = await axios.delete("https://route-movies-api.vercel.app/deleteNote",{
+          let {data} = await axios.delete("https://movies-api.routemisr.com/deleteNote",{
             data:{
               NoteID,
               token
@@ -79,23 +79,24 @@ export default function Home() {
 
   async function getUserNotes()
   {
-    let {data} = await axios.get("https://route-movies-api.vercel.app/getUserNotes",{
+    try {
+      let {data} = await axios.get("https://movies-api.routemisr.com/getUserNotes",{
       headers:{
         token,
         userID
       },
-      params:{
-
-      }
-      
+      params: {}
     })
-
+console.log(data);
     setUserNotes(data.Notes)
+    } catch (error) {
+      console.log("catchError",error);
+    }
   }
 
    async function addNote(note)
   {
-      let {data} = await axios.post("https://route-movies-api.vercel.app/addNote",note)
+      let {data} = await axios.post("https://movies-api.routemisr.com/addNote",note)
       console.log(data)
       if (data.message == "success") {
         Swal.fire('Added!', '', 'success').then(() => {

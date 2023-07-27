@@ -19,7 +19,7 @@ export default function Note({noteDetails,deleteNote , getUserNotes}) {
 
   async function updateNote(values)
   {
-      let {data} = await axios.put("https://route-movies-api.vercel.app/updateNote",values)
+      let {data} = await axios.put("https://movies-api.routemisr.com/updateNote",values)
       if(data.message === "updated")
       {
         getUserNotes()

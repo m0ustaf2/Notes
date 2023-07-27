@@ -20,7 +20,7 @@ export default function Register() {
     async function handelRegister(regObject)
     {
       setIsLoading(true)
-      let {data} = await axios.post("https://route-movies-api.vercel.app/signup",regObject)
+      let {data} = await axios.post("https://movies-api.routemisr.com/signup",regObject)
       if(data.message === "success")
       {
         setIsLoading(false)
