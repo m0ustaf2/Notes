@@ -16,10 +16,10 @@ export default function Home() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-
   const token = localStorage.getItem("userToken")
   const userID = jwtDecode(token)._id
+
+
 
   const [userNotes,setUserNotes] = useState(null)
 
@@ -80,13 +80,12 @@ export default function Home() {
   async function getUserNotes()
   {
     try {
-      let {data} = await axios.get("https://movies-api.routemisr.com/getUserNotes",{
+      let {data} = await axios.get("https://movies-api.routemisr.com/getUserNotes",
+      {
       headers:{
         token,
         userID
-      },
-      params: {}
-    })
+      }})
 console.log(data);
     setUserNotes(data.Notes)
     } catch (error) {

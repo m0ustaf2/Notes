@@ -1,6 +1,6 @@
 
 import './App.css';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';
 import Layout from './Componetes/Layout/Layout';
 import Login from './Componetes/Login/Login';
 import Register from './Componetes/Register/Register';
@@ -13,7 +13,7 @@ import Notfound from './Componetes/Notfound/Notfound';
 function App() {
 
 
-  const routers = createBrowserRouter([{
+  const routers = createHashRouter([{
     path:"/", element:<Layout/> , children:[
       {path:"/login",element: <InverseProtectedRoot><Login/></InverseProtectedRoot>},
       {index:true,element: <InverseProtectedRoot><Register/> </InverseProtectedRoot>},
